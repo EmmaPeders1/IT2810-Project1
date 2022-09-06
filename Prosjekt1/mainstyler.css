@@ -1,0 +1,100 @@
+body{
+  background-color: #fefae0;
+  font-family: "Console", monospace;
+  padding: 5%;
+ }
+
+.header {
+  padding: 3%;
+  text-align: center;
+  background: #606c38;
+  color: whitesmoke;
+  margin-bottom: 3%;
+}
+
+.header h1 {
+  font-size: 60px;
+}
+
+.footer {
+  padding: 1%;
+  text-align: right;
+  background: #606c38;
+  color: whitesmoke;
+  margin-top: 3%;
+}
+
+ /*grid-container is originally from https://www.w3schools.com/css/css_grid.asp and https://openclassrooms.com/en/courses/5295881-create-web-page-layouts-with-css/5369951-set-columns-depending-on-screen-size */
+ .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  background-color: #ccd5ae;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(243, 249, 231, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+button{
+  padding: 2%;
+  /*top right bottom left*/
+  margin: 10px 10px 10px 0px;
+  color: rgb(46, 41, 41);
+  text-shadow: 0 -1px 1px #335166;
+  font-size: 25px;
+  font-family: "Console", monospace;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+  background-color: #e9edc9;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover{
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+  background-color: #ccd5ae;
+}
+
+button:active{
+  transform: translate(1px,1px);
+}
+
+.SVGleft:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#SVG{
+  height: 300px;
+  width: 300px;
+}
+
+#ball:hover{
+  cursor: pointer;
+  fill: orangered;
+}
+
+.canvasRight:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#myCanvas{
+  animation: backgroundColor 5s infinite;
+}
+
+@keyframes backgroundColor {
+  from{background-color: rgb(234, 119, 215)}
+  to{background-color: #00f4ff}
+}
+
+#documentationText {
+  display: none;
+  font-size: medium;
+}

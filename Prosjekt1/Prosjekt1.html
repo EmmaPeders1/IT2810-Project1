@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Art gallery</title>
+  <link rel="stylesheet" href="mainstyler.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1>THE POOR MAN'S GALLERY</h1>
+    <h2>PRESENTS <i>THE CANINE AND THE BALL</i></h2>
+    <p> BY <br> The student who definitely did the right choice not becoming an artist</p>
+  </div>
+  <div>
+    <h2>About the "artist" and their "art"</h2>
+    <p>As clearly stated in the title, this art project is made by a student with zero qualifications.
+      Even though an artistic eye would be incredible helpful in creating an aesthetically pleasing website, mine refuses to open.
+      I do however have an affinity for dogs and this resulted in an artwork where the starting idea was a dog and a ball.
+      This description would be its name as well.
+      When shown to my fellow students, they responded with <i>"What a cute fox!"</i>.
+      Seeing my creative vision clearly misunderstood, I changed the title.
+      Because I still wanted there to be left a small possibility of this being a dog, I changed the title to <i>"The canine and the ball"</i>.
+      <br>Enjoy!
+    </p>
+  </div>
+  <div class="grid-container">
+    <div class="SVGleft">
+      SVG<br>
+      <svg id="SVG">
+        <rect id="backgroundSVG" height="300px" width="300px">
+          <!--code originally from https://codepen.io/philbolles/pen/QazwWX-->
+          <animate attributeType="XML" attributeName="fill" from="rgb(234, 119, 215)" to="00f4ff" dur="5s" repeatCount="indefinite"/>
+        </rect>
+        <!--ground-->
+        <rect x="0" y="250" height="50px" width="300px" style="fill:green"/>
+        <!--exclamation-->
+        <text x="230" y="60" id="SVGtext" font-size="70px" font-family="'Console', monospace">?</text>
+        <!--body-->
+        <polygon points="160,90 250,280 140,280" style="fill:orange;stroke:black;stroke-width:1" />
+        <!--body white-->
+        <polygon points="160,90 205,280 140,280" style="fill:mintcream;stroke:black;stroke-width:1" />
+        <!--head-->
+        <polygon points="90,75 140,170 220,75" style="fill:orange;stroke:black;stroke-width:1" />
+        <!--eye left-->
+        <circle cx="125" cy="100" r="12" fill="black" />
+        <!--eye left white-->
+        <circle id="eyeLeftWhite" cx="121" cy="104" r="5" fill="mintcream" />
+        <!--eye right-->
+        <circle cx="170" cy="100" r="12" fill="black" />
+        <!--eye right white-->
+        <circle id="eyeRightWhite" cx="166" cy="104" r="5" fill="mintcream" />
+        <!--ear left-->
+        <polygon points="90,75 115,45 140,75" style="fill:orange;stroke:black;stroke-width:1" />
+        <!--ear left decoration-->
+        <polygon points="100,75 115,55 130,75" style="fill:mintcream;stroke:black;stroke-width:1" />
+        <!--ear right-->
+        <polygon id="earRight" points="170,72 195,100 220,72" style="fill:orange;stroke:black;stroke-width:1" />
+        <!--ear right decoration-->
+        <polygon id="earRightDecoration" points="0,0 0,0 0,0" style="fill:mintcream;stroke:black;stroke-width:1" />
+        <!--muzzle white-->
+        <polygon points="113,120 140,170 182,120" style="fill:mintcream;stroke:black;stroke-width:1" />
+        <!--muzzle-->
+        <polygon points="126,145 140,170 160,145" style="fill:black;stroke:black;stroke-width:1" />
+        <!--leg left-->
+        <polygon points="150,185 170,283 120,283" style="fill:orange;stroke:black;stroke-width:1" />
+        <!--leg right-->
+        <polygon points="182,185 232,283 180,283" style="fill:orange;stroke:black;stroke-width:1" />
+        <!--ball-->
+        <circle id="ball" cx="50" cy="260" r="25" stroke="black" stroke-width="1" fill="yellow" />
+      </svg>
+    </div>
+    <div class="canvasRight">
+      CANVAS <br>
+      <canvas id="myCanvas" height="300px" width="300px"></canvas>
+    </div>
+  </div>
+
+  <div>
+    <button id="documentationBtn">Show documentation</button>
+    <div id="documentationText">
+      <br><br><b>Give a description of how you have used CSS grid and Flexbox layout, explain your choices.</b>
+      <br>I chose to use CSS grid as I already have experience in Flexbox layout and wanted to expand my repertoire.
+      To start I chose to use <a href="https://www.w3schools.com/css/css_grid.asp">w3schools.com</a> and modified my design based on this resource.
+      Upon reflection, I would rather have used Flexbox as there was not that many elements.
+      <br><br><b>Give a description of how you have used HTML canvas and SVG in HTML.</b>
+      <br>Both images above consist of two frames that the user originally could interact with by clicking on the respective images.
+      After having a chat with a student assistant, I changed the program so the interaction could only happen upon clicking on the ball.
+      This is conveyed to the user by turning the cursor to <i>"pointer"</i> and changing the color when hovering the ball in each image.
+      <br>With HTML canvas I defined the element itself in the body.
+      In the script, I drew my two frames in each function.
+      These functions are called every other time with a <i>clear()</i>-function in between which ensures that the images do not overlap.
+      The <i>"background animation"</i> (the sky changing color), is done in CSS by using <i>@keyframes</i>, which was inspired by a <a href="https://codepen.io/philbolles/pen/QazwWX">this</a> example from <i>codepen.io</i>.
+      <br>With SVG in HTML, I defined the actual element in the body and drew the first "frame".
+      In the script, I change only the elements that are not equal between "frames".
+      The sky-animation for the SVG is done directly in one of the SVG-elements.
+      <br><br><b>Give a brief description of how you have used jQuery.</b>
+      <br>Due to lack of experience with jQuery, I started by reading <a href="https://www.w3schools.com/jquery/jquery_intro.asp">this</a>.
+      Originally I only wanted to use jQuery to show and hide the documentation on click of a button.
+      This led me to <a href="https://stackoverflow.com/questions/4323848/how-to-handle-button-click-events-in-jquery">stackoverflow.com</a> which gave me a starting point.
+      When I better understood how jQuery worked I also used it to switch between the two frames in each picture.
+      Later I realized that the user interaction was supposed to be limited to a part of the image and not the whole image itself.
+      This led me to replace the jQuery on canvas with an <i>object.addEventListener()</i> which made it possible to identify where the user was clicking.
+      <br><br><b>Give a brief description of how you have carried out cross-browser testing.</b>
+      <br>Cross-browser testing is carried out by performing exploratory testing on Google Chrome and Microsoft Edge by both fellow students and myself.
+      The tests included resizing the window, clicking at random and intended places, and letting the user come to their own conlusions.
+      This was incredible useful, as it gave me an insight of the project from a new angle.
+      One of the main results was me realizing there was a problem with the scaling in canvas.
+      This made me realize how other errors where connected to this one.
+      To fix this, I simply removed the dynamic resizing of the SVG and canvas, as the grid already adjusted itself based on the window size.
+      <br><br><b>List the most important (most useful) sources of information you have used (tutorials, websites, books).
+      <br>Remember to provide sources if you reuse code snippets. </b>
+      <br>These are the sources I mainly used to obtain relevant information.
+      <ul>
+        <li>w3schools.com</li>
+        <li>stackoverflow.com</li>
+        <li>geeksforgeeks.com</li>
+        <li>codepen.io</li>
+      </ul>
+      I mostly used <i>w3schools.com</i> and <i>geeksforgeeks.com</i> to get a reminder of the basics.
+      <i>stackoverflow.com</i> and <i>codepen.io</i> were used when I needed more spesific code and examples to look at.
+      Direct reuse of code snippets has not been practiced, but code snippets from various sources have been used as a starting point and modified for my project.
+      In the cases where this applies, it is documented above and in the code.
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>WowTheyMadeThat<sup>"TM"</sup></p>
+  </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+
+  let CANVASstatus = 0;
+  let SVGstatus = 0;
+  let canvasX = 50;
+
+  function earUP(){
+
+    //ground
+    ctx.fillStyle = "green";
+    ctx.fillRect(0,250,300,300);
+
+    // !
+    ctx.font = "70px Console, monospace";
+    ctx.fillStyle = "black";
+    ctx.fillText("!", 220, 50);
+
+    //body
+    ctx.beginPath();
+    ctx.moveTo(160, 90);
+    ctx.lineTo(250, 280);
+    ctx.lineTo(140, 280);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //body white
+    ctx.beginPath();
+    ctx.moveTo(160, 90);
+    ctx.lineTo(205, 280);
+    ctx.lineTo(140, 280);
+    ctx.closePath();
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //head
+    ctx.beginPath();
+    ctx.moveTo(90, 75);
+    ctx.lineTo(140, 170);
+    ctx.lineTo(220, 75);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear left
+    ctx.beginPath();
+    ctx.moveTo(90, 75);
+    ctx.lineTo(115, 45);
+    ctx.lineTo(140, 75);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear left decoration
+    ctx.beginPath();
+    ctx.moveTo(100, 75);
+    ctx.lineTo(115, 55);
+    ctx.lineTo(130, 75);
+    ctx.closePath();
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //muzzle white
+    ctx.beginPath();
+    ctx.moveTo(113, 120);
+    ctx.lineTo(140, 170);
+    ctx.lineTo(182, 120);
+    ctx.closePath();
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //muzzle
+    ctx.beginPath();
+    ctx.moveTo(126, 145);
+    ctx.lineTo(140, 170);
+    ctx.lineTo(160, 145);
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //eye left
+    ctx.beginPath();
+    ctx.arc(125, 100, 12, 0, Math.PI*2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //eye left white
+    ctx.beginPath();
+    ctx.arc(123, 104, 5, 0, Math.PI*2);
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+
+    //eye right
+    ctx.beginPath();
+    ctx.arc(170, 100, 12, 0, Math.PI*2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //eye right white
+    ctx.beginPath();
+    ctx.arc(169, 104, 5, 0, Math.PI*2);
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+
+    //leg left
+    ctx.beginPath();
+    ctx.moveTo(150, 185);
+    ctx.lineTo(170, 283);
+    ctx.lineTo(120, 283);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //leg right
+    ctx.beginPath();
+    ctx.moveTo(182, 185);
+    ctx.lineTo(232, 283);
+    ctx.lineTo(180, 283);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear right
+    ctx.beginPath();
+    ctx.moveTo(170, 75);
+    ctx.lineTo(195, 45);
+    ctx.lineTo(220, 75);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear right decoration
+    ctx.beginPath();
+    ctx.moveTo(180, 75);
+    ctx.lineTo(195, 55);
+    ctx.lineTo(210, 75);
+    ctx.closePath();
+    ctx.fillStyle = "whitesmoke";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ball
+    ctx.beginPath();
+    ctx.arc(110, 260, 25, 0, Math.PI*2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    CANVASstatus = 1;
+  }
+
+  function earDOWN(){
+
+    //ground
+    ctx.fillStyle = "green";
+    ctx.fillRect(0,250,300,300);
+
+    // ?
+    ctx.font = "70px Console, monospace";
+    ctx.fillStyle = "black";
+    ctx.fillText("?", 230, 60);
+
+    //body
+    ctx.beginPath();
+    ctx.moveTo(160, 90);
+    ctx.lineTo(250, 280);
+    ctx.lineTo(140, 280);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //body white
+    ctx.beginPath();
+    ctx.moveTo(160, 90);
+    ctx.lineTo(205, 280);
+    ctx.lineTo(140, 280);
+    ctx.closePath();
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //head
+    ctx.beginPath();
+    ctx.moveTo(90, 75);
+    ctx.lineTo(140, 170);
+    ctx.lineTo(220, 75);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear left
+    ctx.beginPath();
+    ctx.moveTo(90, 75);
+    ctx.lineTo(115, 45);
+    ctx.lineTo(140, 75);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear left decoration
+    ctx.beginPath();
+    ctx.moveTo(100, 75);
+    ctx.lineTo(115, 55);
+    ctx.lineTo(130, 75);
+    ctx.closePath();
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //muzzle white
+    ctx.beginPath();
+    ctx.moveTo(113, 120);
+    ctx.lineTo(140, 170);
+    ctx.lineTo(182, 120);
+    ctx.closePath();
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //muzzle
+    ctx.beginPath();
+    ctx.moveTo(126, 145);
+    ctx.lineTo(140, 170);
+    ctx.lineTo(160, 145);
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //eye left
+    ctx.beginPath();
+    ctx.arc(125, 100, 12, 0, Math.PI*2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //eye left white
+    ctx.beginPath();
+    ctx.arc(121, 104, 5, 0, Math.PI*2);
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+
+    //eye right
+    ctx.beginPath();
+    ctx.arc(170, 100, 12, 0, Math.PI*2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    //eye right white
+    ctx.beginPath();
+    ctx.arc(166, 104, 5, 0, Math.PI*2);
+    ctx.fillStyle = "mintcream";
+    ctx.fill();
+
+    //leg left
+    ctx.beginPath();
+    ctx.moveTo(150, 185);
+    ctx.lineTo(170, 283);
+    ctx.lineTo(120, 283);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //leg right
+    ctx.beginPath();
+    ctx.moveTo(182, 185);
+    ctx.lineTo(232, 283);
+    ctx.lineTo(180, 283);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ear right
+    ctx.beginPath();
+    ctx.moveTo(170, 72);
+    ctx.lineTo(195, 100);
+    ctx.lineTo(220, 72);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    //ball
+    ctx.beginPath();
+    ctx.arc(50, 260, 25, 0, Math.PI*2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    CANVASstatus = 0;
+  }
+
+  earDOWN();
+
+  //animation of canvas
+  canvas.addEventListener('click', (e) =>{
+    const circle = new Path2D();
+    circle.arc(canvasX, 260, 25, 0, Math.PI*2);
+    const isPointInBall = ctx.isPointInPath(circle, e.offsetX, e.offsetY);
+    if(isPointInBall){
+      if(CANVASstatus == 0) {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        earUP();
+        canvasX = 110;
+      }
+      else{
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        earDOWN();
+        canvasX = 50;
+      }
+    }
+  });
+
+  //hover-function on canvas
+  canvas.addEventListener('mousemove', (e) =>{
+    const circle2 = new Path2D();
+    circle2.arc(canvasX, 260, 25, 0, Math.PI*2);
+    const isPointInBall2 = ctx.isPointInPath(circle2, e.offsetX, e.offsetY);
+    if(isPointInBall2){
+      canvas.style.cursor = "pointer";
+      ctx.fillStyle = "orangered";
+      ctx.fill()
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = "black";
+      ctx.stroke();
+    }
+    else{
+      canvas.style.cursor = "default";
+      ctx.fillStyle = "yellow";
+      ctx.fill()
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = "black";
+      ctx.stroke();
+    }
+  });
+
+  //animation of SVG
+  $(document).ready(function() {
+    $("#ball").click(function(){
+      if(SVGstatus == 0){
+        $("#SVGtext").html("!");
+        $("#earRight").attr("points", "170,75 195,45 220,75");
+        $("#earRightDecoration").attr("points", "180,75 195,55 210,75");
+        $("#ball").attr("cx", 110);
+        $("#eyeLeftWhite").attr("cx", 123);
+        $("#eyeRightWhite").attr("cx", 169);
+        SVGstatus = 1;
+      }
+      else{
+        $("#SVGtext").html("?");
+        $("#earRight").attr("points", "170,72 195,100 220,72");
+        $("#earRightDecoration").attr("points", "0,0 0,0 0,0");
+        $("#ball").attr("cx", 50);
+        $("#eyeLeftWhite").attr("cx", 121);
+        $("#eyeRightWhite").attr("cx", 166);
+        SVGstatus = 0;
+      }
+    });
+  });
+
+  //show more show less of documentation
+  $(document).ready(function() {
+    $("#documentationBtn").click(function(){
+      if($(this).html() == "Show documentation"){
+        $("#documentationText").css("display", "inline");
+        $(this).html("Hide documentation");
+      }
+      else{
+        $("#documentationText").css("display", "none");
+        $(this).html("Show documentation");
+      }
+    });
+  });
+
+</script>
+</html>
